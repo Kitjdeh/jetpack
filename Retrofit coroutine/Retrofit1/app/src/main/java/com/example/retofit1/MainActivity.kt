@@ -14,7 +14,6 @@ import com.example.retofit1.viewmodel.MainViewModel
 class MainActivity : AppCompatActivity() {
 
     lateinit var viewModel: MainViewModel
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -23,8 +22,6 @@ class MainActivity : AppCompatActivity() {
 
         viewModel.getPost1()
         viewModel.getPostNumber(5)
-
-
 
         val area1 = findViewById<TextView>(R.id.area1)
         val area2 = findViewById<TextView>(R.id.area2)
@@ -36,7 +33,6 @@ class MainActivity : AppCompatActivity() {
             area2.text = it.toString()
         })
 
-
         viewModel.getPostAlll()
         val rv = findViewById<RecyclerView>(R.id.rv)
         viewModel.liveWordList.observe(this, {
@@ -44,9 +40,5 @@ class MainActivity : AppCompatActivity() {
             rv.adapter = customAdapter
             rv.layoutManager = LinearLayoutManager(this)
         })
-
-
     }
-
-
 }
